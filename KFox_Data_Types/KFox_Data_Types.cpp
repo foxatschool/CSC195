@@ -25,7 +25,7 @@ int main()
 	isAdult = (age >= 18);
 
 	cout << "Enter Zipcode: ";
-	cin >> wage;
+	cin >> zipcode;
 
 	cout << "Enter Hourly Wage: ";
 	cin >> wage;
