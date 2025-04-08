@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KFox_User_Console_App", "KF
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Containers", "Containers\Containers.vcxproj", "{C79DD70A-5BD2-40C3-861C-FDB994128FA6}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KFox_User_Data_Type_Image", "KFox_User_Data_Type_Image\KFox_User_Data_Type_Image.vcxproj", "{BF98F647-5A22-4296-A267-64CCCFDF9128}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -61,6 +63,14 @@ Global
 		{C79DD70A-5BD2-40C3-861C-FDB994128FA6}.Release|x64.Build.0 = Release|x64
 		{C79DD70A-5BD2-40C3-861C-FDB994128FA6}.Release|x86.ActiveCfg = Release|Win32
 		{C79DD70A-5BD2-40C3-861C-FDB994128FA6}.Release|x86.Build.0 = Release|Win32
+		{BF98F647-5A22-4296-A267-64CCCFDF9128}.Debug|x64.ActiveCfg = Debug|x64
+		{BF98F647-5A22-4296-A267-64CCCFDF9128}.Debug|x64.Build.0 = Debug|x64
+		{BF98F647-5A22-4296-A267-64CCCFDF9128}.Debug|x86.ActiveCfg = Debug|Win32
+		{BF98F647-5A22-4296-A267-64CCCFDF9128}.Debug|x86.Build.0 = Debug|Win32
+		{BF98F647-5A22-4296-A267-64CCCFDF9128}.Release|x64.ActiveCfg = Release|x64
+		{BF98F647-5A22-4296-A267-64CCCFDF9128}.Release|x64.Build.0 = Release|x64
+		{BF98F647-5A22-4296-A267-64CCCFDF9128}.Release|x86.ActiveCfg = Release|Win32
+		{BF98F647-5A22-4296-A267-64CCCFDF9128}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
