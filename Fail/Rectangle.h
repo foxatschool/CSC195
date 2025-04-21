@@ -9,10 +9,12 @@ public:
         m_height = h;
     }
 
-    float Area() override
+    float area() override
     {
         return m_width * m_height;
     }
+
+    Type getType() override { return Type::RECTANGLE; }
 
 private:
     float m_width;

@@ -6,5 +6,12 @@ public:
     Shape() {}
     ~Shape() {}
 
-    virtual float Area();
+    enum class Type {
+        CIRCLE,
+        RECTANGLE
+    };
+
+    virtual Type getType();
+
+    virtual float area();
 };
