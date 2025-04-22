@@ -17,14 +17,14 @@ int main()
     shapes.push_back(c);
     shapes.push_back(r);
 
-    for (int i = 0; i <= shapes.size(); i++) 
+    for (int i = 0; i < shapes.size(); i++) 
     {
         cout << "Area: " << shapes[i]->area() << endl;
         if(shapes[i]->getType() == Shape::Type::CIRCLE)
         {
             Circle* cirPtr = dynamic_cast<Circle*>(shapes[i]);
 
-            cout << cirPtr->getRadius() << endl;
+            cout << "Radius: " << cirPtr->getRadius() << endl;
         }
         
     }
