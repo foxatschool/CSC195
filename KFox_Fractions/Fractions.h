@@ -2,7 +2,7 @@
 
 namespace mathlib
 {
-	template <typename T>
+	template<typename T>
 	class Fractions
 	{
 	private:
@@ -11,79 +11,87 @@ namespace mathlib
 
 	public:
 
-		Fraction<T>() = default;
+		Fractions() = default;
 
-		Fractions(T numerator, T denominator) :
-			if (numerator != 0 && denominator != 0) 
+		Fractions(T numerator, T denominator)
+		{
+			if (numerator != 0 && denominator != 0)
 			{
 				numerator_m = numerator;
 				denominator_m = denominator;
 			}
+		}
+			
 
-		Fraction<T> operator + (const Fraction<T>& other) { return Fraction<T> (numerator_m + other.numerator_m, denominator_m + other.denominator_m) }
-		//Fraction<T> operator - (const Fraction<T>& other) { return Fraction<T> (numerator_m - other.numerator_m, denominator_m - other.denominator_m) }
-		//Fraction<T> operator * (const Fraction<T>& other) { return Fraction<T> (numerator_m * other.numerator_m, denominator_m * other.denominator_m) }
-		//Fraction<T> operator / (const Fraction<T>& other) { return Fraction<T> (numerator_m / other.numerator_m, denominator_m / other.denominator_m) }
-
-
-
-		//Fraction<T> operator == (const Fraction<T>& other) { return  (this->numerator_m == other.numerator_m && this->denominator_m == other.denominator_m) }
-		//Fraction<T> operator != (const Fraction<T>& other) { return !(this == other) }
-		//Fraction<T> operator < (const Fraction<T>& other) { return (this->tofloat() < other.tofloat) }
-		//Fraction<T> operator > (const Fraction<T>& other) { return (this->tofloat() > other.tofloat) }
-		//Fraction<T> operator <= (const Fraction<T>& other) { return (this->tofloat() <= other.tofloat) }
-		//Fraction<T> operator >= (const Fraction<T>& other) { return (this->tofloat() >= other.tofloat) }
+		Fractions operator + (const Fractions& other) { return Fractions(numerator_m + other.numerator_m, denominator_m + other.denominator_m); }
+		Fractions operator - (const Fractions& other) { return Fractions(numerator_m - other.numerator_m, denominator_m - other.denominator_m); }
+		Fractions operator * (const Fractions& other) { return Fractions(numerator_m * other.numerator_m, denominator_m * other.denominator_m); }
+		Fractions operator / (const Fractions& other) { return Fractions(numerator_m / other.numerator_m, denominator_m / other.denominator_m); }
 
 
 
-		//freind std::ostream& operator << (std::ostream& ostream, const Fraction<T>& f) 
-		//{
-		//	ostream << p.numerator_m << "\n -- \n " << p.denominator_m << std::endl;
+		bool operator == (const Fractions& other) { return  (this->numerator_m == other.numerator_m && this->denominator_m == other.denominator_m); }
+		bool operator != (const Fractions& other) { return !(this == other); }
+		bool operator < (const Fractions& other) { return (this->tofloat() < other.tofloat); }
+		bool operator > (const Fractions& other) { return (this->tofloat() > other.tofloat); }
+		bool operator <= (const Fractions& other) { return (this->tofloat() <= other.tofloat); }
+		bool operator >= (const Fractions& other) { return (this->tofloat() >= other.tofloat); }
 
-		//	return ostream;
-		//}
-		//friend std::istream& operator >> (std::istream& istream, Fraction<T>& p) 
-		//{
-		//	istream >> p.numerator_m;
-		//	istream >> p.denominator_m;
 
-		//	return istream;
-		//}
 
-		//Fractions<T> Simplify(numerator, denominator)
-		//{
-		//	// Find the greatest common divisor(GCD)
-		//	gcd = findGCD(numerator, denominator);
+		friend std::ostream& operator << (std::ostream& ostream, const Fractions<T>& f) 
+		{
+			ostream << f.numerator_m << "\n -- \n " << f.denominator_m << std::endl;
 
-		//	// Divide both numerator and denominator by the GCD
-		//	simplifiedNumerator = numerator / gcd;
-		//	simplifiedDenominator = denominator / gcd;
+			return ostream;
+		}
+
+		friend std::istream& operator >> (std::istream& istream, Fractions<T>& p) 
+		{
+			istream >> p.numerator_m;
+			istream >> p.denominator_m;
+
+			return istream;
+		}
+
+		Fractions Simplify()
+		{
+		// Find the greatest common divisor(GCD)
+			T gcd = findGCD(numerator_m, denominator_m);
+
+			// Divide both numerator and denominator by the GCD
+			T simplifiedNumerator = numerator_m / gcd;
+			T simplifiedDenominator = denominator_m / gcd;
 
 		//	// Handle sign(keep sign in numerator)
-		//	if (denominator < 0)
-		//	{
-		//		simplifiedNumerator = -simplifiedNumerator;
-		//		simplifiedDenominator = -simplifiedDenominator;
-		//	}
+			if (denominator < 0)
+			{
+				simplifiedNumerator = simplifiedNumerator * -1;
+				simplifiedDenominator = simplifiedDenominator * -1;
+			}
 
-		//	return Fractions(simplifiedNumerator, simplifiedDenominator);
-		//}
-		//findGCD(a, b) 
-		//{
-		//	// Euclidean algorithm to find GCD
-		//	while (b != 0)
-		//	{
-		//		temp = b
-		//			b = a % b
-		//			a = temp
-		//			return a
-		//	}
+			return Fractions(simplifiedNumerator, simplifiedDenominator);
+			//return numerator_m % denominator_m;
+		}
+
+		findGCD(T a, T b) 
+		{
+			// Euclidean algorithm to find GCD
+			while (b != 0)
+			{
+				T temp = b;
+				b = a % b;
+				a = temp;
+				return a;
+			}
 		//			
-		//}
+		}
 
-		//double tofloat() const {
-		//	return static_cast<double>(numerator_m) / static_cast<double>(denominator_m);
-		//}
+		float tofloat() const 
+		{
+			return static_cast<float>(numerator_m) / static_cast<float>(denominator_m);
+			//return numerator_m / (float)denominator_m;
+		}
 
 	};
 	
