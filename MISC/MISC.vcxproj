@@ -29,8 +29,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{d6e86f29-51fe-4c6b-af37-3b1d8a74324f}</ProjectGuid>
-    <RootNamespace>KFoxClassesCardinalWeapons</RootNamespace>
+    <ProjectGuid>{91a2321b-110a-4684-8f9d-7ba2d40c5a23}</ProjectGuid>
+    <RootNamespace>MISC</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -141,12 +141,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Bow.cpp" />
-    <ClCompile Include="KFox_Classes_Cardinal_Weapons.cpp" />
-    <ClCompile Include="Sword.cpp" />
+    <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CardinalWeapons.h" />
+    <ClInclude Include="Point.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
