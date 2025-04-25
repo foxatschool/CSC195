@@ -32,10 +32,10 @@ namespace mathlib
 
 		bool operator == (const Fractions& other) { return  (this->numerator_m == other.numerator_m && this->denominator_m == other.denominator_m); }
 		bool operator != (const Fractions& other) { return !(this == other); }
-		bool operator < (const Fractions& other) { return (this->tofloat() < other.tofloat); }
-		bool operator > (const Fractions& other) { return (this->tofloat() > other.tofloat); }
-		bool operator <= (const Fractions& other) { return (this->tofloat() <= other.tofloat); }
-		bool operator >= (const Fractions& other) { return (this->tofloat() >= other.tofloat); }
+		bool operator < (const Fractions& other) { return (this->tofloat() < other.tofloat()); }
+		bool operator > (const Fractions& other) { return (this->tofloat() > other.tofloat()); }
+		bool operator <= (const Fractions& other) { return (this->tofloat() <= other.tofloat()); }
+		bool operator >= (const Fractions& other) { return (this->tofloat() >= other.tofloat()); }
 
 
 
@@ -64,7 +64,7 @@ namespace mathlib
 			T simplifiedDenominator = denominator_m / gcd;
 
 		//	// Handle sign(keep sign in numerator)
-			if (denominator < 0)
+			if (denominator_m < 0)
 			{
 				simplifiedNumerator = simplifiedNumerator * -1;
 				simplifiedDenominator = simplifiedDenominator * -1;
@@ -74,7 +74,7 @@ namespace mathlib
 			//return numerator_m % denominator_m;
 		}
 
-		findGCD(T a, T b) 
+		T findGCD(T a, T b) 
 		{
 			// Euclidean algorithm to find GCD
 			while (b != 0)
@@ -84,7 +84,7 @@ namespace mathlib
 				a = temp;
 				return a;
 			}
-		//			
+					
 		}
 
 		float tofloat() const 
